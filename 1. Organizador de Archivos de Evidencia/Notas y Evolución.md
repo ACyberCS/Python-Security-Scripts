@@ -46,10 +46,11 @@ for file in os.listdir(ruta):
 ```
 
 **🔧 Observaciones a corregir:**
--   Es mejor usar `os.makedirs()` a `os.mkdir`  → puesto que se puede crear directorios anidados de forma recursiva
+-  Es mejor usar `os.makedirs()` a `os.mkdir`  → puesto que se puede crear directorios anidados de forma recursiva
 -  Agregar un aviso de procesamiento del script → mejoraremos la interacción y visualización del script trabajando
 -  Preferible usar `filename` sobre `file` → refiere al nombre de un fichero como una cadena de texto
 -  Eliminar línea `if file.endswith(extension):` → dentro del `for` ya se ha extraído la extensión, por lo que no es estrictamente necesaria, el script funciona sin ella
+
 ### V.2 - Versión corregida de las anteriores observaciones
 
 ```
@@ -83,10 +84,11 @@ print("Organización completada con éxito!")
 **🔧 Observaciones a corregir:**
 -  Presenta error al cambiar la  ubicación de directorios  externamente → se necesita asegurar que las rutas siempre apunten a la ubicación correcta, sin importar desde dónde se ejecute el script
 -  (Opcional no requerido) Cambio de palabras:  de `archivo ` a `fichero` y de `carpeta` a `directorio`
+
 ### V.3 - Final de Script
 
 **📌 Objetivos cumplidos:**
--  Construir una ruta absoluta para ejecutar el script sin importar donde se encuentre  → y redefinimos  las variables `ruta` y `destino` 
+-  Construir una ruta absoluta para ejecutar el script sin importar donde se encuentre  → redefinimos  las variables `ruta` y `destino` 
 -  Adicional, se añadió un bloque `try-except` para manejar posibles errores, como la no existencia del directorio `evidencia_desorganizada`
 
 ```
@@ -107,7 +109,6 @@ try:
     for filename in os.listdir(ruta):
         pos_inicial = os.path.join(ruta, filename)
         if os.path.isfile(pos_inicial):
-            # Extrae la extensión
             nm_fichero, extension = os.path.splitext(filename)
         if extension:
             nm_subdirectorio = extension[1:]
