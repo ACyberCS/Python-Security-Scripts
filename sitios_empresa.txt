@@ -1,0 +1,5 @@
+https://google.com
+https://github.com
+https://httpbin.org/status/404
+https://httpbin.org/status/503
+https://un-dominio-que-no-existe-123456.com
